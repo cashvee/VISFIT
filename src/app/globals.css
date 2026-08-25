@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@theme {
+  /* VisFit — premium athletic identity: near-black + off-white + volt signal accent */
+  --color-background: #f4f4f2;
+  --color-foreground: #0a0a0a;
+  --color-muted: #e8e8e5;
+  --color-muted-foreground: #6b6b68;
+  --color-card: #ffffff;
+  --color-card-foreground: #0a0a0a;
+  --color-border: #dcdcd8;
+  --color-input: #ffffff;
+  --color-ring: #0a0a0a;
+  --color-primary: #0a0a0a;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #e8e8e5;
+  --color-secondary-foreground: #0a0a0a;
+  --color-accent: #e8e8e5;
+  --color-accent-foreground: #0a0a0a;
+  --color-destructive: #ff3b30;
+  --color-destructive-foreground: #ffffff;
+  --color-signal: #cbfb45;
+  --color-signal-foreground: #0a0a0a;
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-visfit-display);
+}
+
+.dark {
+  --color-background: #0a0a0b;
+  --color-foreground: #f5f5f2;
+  --color-muted: #1b1b1d;
+  --color-muted-foreground: #96968f;
+  --color-card: #141416;
+  --color-card-foreground: #f5f5f2;
+  --color-border: #26262a;
+  --color-input: #1b1b1d;
+  --color-ring: #f5f5f2;
+  --color-primary: #f5f5f2;
+  --color-primary-foreground: #0a0a0a;
+  --color-secondary: #1b1b1d;
+  --color-secondary-foreground: #f5f5f2;
+  --color-accent: #1b1b1d;
+  --color-accent-foreground: #f5f5f2;
+  --color-destructive: #ff453a;
+  --color-destructive-foreground: #ffffff;
+  --color-signal: #cbfb45;
+  --color-signal-foreground: #0a0a0a;
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    touch-action: manipulation;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  /* Native <select> dropdown options — force theme-aware colors.
+     color-scheme alone is not enough for <option> in Chromium. */
+  select option {
+    background-color: var(--color-card);
+    color: var(--color-foreground);
+  }
+
+  /* Make date/time picker indicators visible and tappable */
+  input[type="date"]::-webkit-calendar-picker-indicator,
+  input[type="time"]::-webkit-calendar-picker-indicator,
+  input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.6;
+    padding: 4px;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator:hover,
+  input[type="time"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+  }
+  .dark input[type="date"]::-webkit-calendar-picker-indicator,
+  .dark input[type="time"]::-webkit-calendar-picker-indicator,
+  .dark input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+}
+
+.safe-bottom {
+  padding-bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
+}
+.safe-top {
+  padding-top: calc(env(safe-area-inset-top) + 0.5rem);
+}

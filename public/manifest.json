@@ -1,0 +1,40 @@
+{
+  "name": "VISFIT \u2014 Premium Fitness Platform",
+  "short_name": "VISFIT",
+  "description": "AI-powered fitness, nutrition and progress platform",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "prefer_related_applications": false,
+  "theme_color": "#0a0a0b",
+  "background_color": "#0a0a0b",
+  "categories": ["health", "lifestyle", "fitness"],
+  "icons": [
+    {
+      "src": "/visfit-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/visfit-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/visfit-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/visfit-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
