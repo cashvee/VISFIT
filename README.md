@@ -100,8 +100,11 @@ http://localhost:4000 → opens the app directly.
 ## Vercel Deploy
 
 1. Import project: https://vercel.com/new
-2. Add the environment variables listed above.
-3. Deploy.
+2. In Vercel Project Settings → Environment Variables, add `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `AUTH_SECRET`, and `PEXELS_API_KEY` for Production, Preview, and Development as needed.
+3. Add `USDA_API_KEY` and `UNSPLASH_ACCESS_KEY` if those services are enabled.
+4. Deploy.
+
+The build can be inspected without database variables, but the deployed application requires `TURSO_DATABASE_URL` and `TURSO_AUTH_TOKEN` at runtime. Never commit `.env.local` or paste secret values into source files.
 
 ---
 
